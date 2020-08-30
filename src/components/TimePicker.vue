@@ -278,12 +278,15 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .vfc-time-picker-container {
   min-width: 250px;
+
   .vfc-modal-time-line {
-    > span {
-      > span:not(:nth-child(2)):not(.vfc-active):hover {
+    
+    & span {
+      
+      & span:not(:nth-child(2)):not(.vfc-active):hover {
         cursor: pointer;
       }
     }
@@ -291,6 +294,7 @@ export default {
   .titles {
     display: flex;
     padding: 10px 0;
+    
     > div {
       flex: 1;
       text-align: center;

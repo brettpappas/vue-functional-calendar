@@ -1666,25 +1666,31 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../assets/scss/calendar.scss';
+<style lang="postcss">
+@import '../assets/css/calendar.css';
+
 .rangeCleaner {
   padding: 5px 0 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   span {
     color: white;
     border-radius: 5px;
     border: none;
     padding: 5px;
+
     &.active {
+
       &:hover {
         background-color: #4f8a9e;
         cursor: pointer;
       }
+
       background-color: #66b3cc;
     }
+
     &.disabled {
       background-color: rgb(148, 148, 148);
     }

@@ -171,22 +171,12 @@ export default {
       const startPosFirst = this.calendar.multipleDateRange
         .map(range => range.start)
         .indexOf(this.day.date)
-      const endPosLast = this.calendar.multipleDateRange
-        .map(range => range.end)
-        .lastIndexOf(this.day.date)
-      const startPosLast = this.calendar.multipleDateRange
-        .map(range => range.start)
-        .lastIndexOf(this.day.date)
-
-      this.toolTip =
-        endPosFirst !== endPosLast ||
-        startPosFirst !== startPosLast ||
-        (endPosFirst > -1 && startPosFirst > -1) ||
-        (startPosFirst > -1 && endPosFirst > -1)
-
-      if (this.toolTip) {
-        return '·'
-      }
+      // const endPosLast = this.calendar.multipleDateRange
+      //   .map(range => range.end)
+      //   .lastIndexOf(this.day.date)
+      // const startPosLast = this.calendar.multipleDateRange
+      //   .map(range => range.start)
+      //   .lastIndexOf(this.day.date)
 
       return (endPosFirst > -1 ? new Number(endPosFirst) : 0) || startPosFirst
     }
@@ -230,7 +220,6 @@ export default {
       }
       //!!!!\\
     },
-
     clearRange() {
       //$emit
       const removeIndex = this.calendar.multipleDateRange.findIndex(
@@ -460,9 +449,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .vfc-day {
   position: relative;
+
   .times {
     position: absolute;
     top: -5px;
@@ -473,11 +463,13 @@ export default {
     z-index: 20;
     height: 15px;
     line-height: 15px;
+
     &:hover {
       cursor: pointer;
       background-color: rgb(199, 0, 0);
     }
   }
+
   .number {
     position: absolute;
     top: -5px;
@@ -490,10 +482,12 @@ export default {
     z-index: 30;
     height: 15px;
     line-height: 15px;
+
     &:hover {
       background-color: rgb(0, 94, 0);
     }
   }
+
   .toolTip {
     position: absolute;
     top: -20px;

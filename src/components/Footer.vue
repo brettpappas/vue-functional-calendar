@@ -1,5 +1,5 @@
 <template>
-  <div class="footerCon">
+  <div class="footerContainer">
     <slot name="cleaner"></slot>
     <slot name="footer"></slot>
   </div>
@@ -11,8 +11,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.footerCon {
+<style scoped lang="postcss">
+.footerContainer {
   display: flex;
   justify-content: space-between;
   margin: 0 20px 20px;
